@@ -23,12 +23,13 @@ function App() {
 
   console.log('Jokes', jokes)
 
-  const StyledRow = styled(Row)`
+  const StyleListGroup = styled(ListGroup)`
     margin: 20px 0;
   `
+
   const StyledButton = styled(Button)`
+    margin: 5px 0;
     width: 200px;
-    mmargin: 0 auto;
   `
   const StyleForm = styled(Form)`
     display: flex;
@@ -38,26 +39,20 @@ function App() {
 
   return (
     <Container fluid='md'>
-      <StyledRow>
-        <ListGroup>
-          {jokes.map((item) => (
-            <ListGroup.Item key={item.id} className='mb-2'>
-              <Item joke={item.joke} key={item.id} />
-            </ListGroup.Item>
-          ))}
-        </ListGroup>
-      </StyledRow>
+      <StyleListGroup>
+        {jokes.map((item) => (
+          <ListGroup.Item key={item.id} className='mb-3'>
+            <Item joke={item.joke} key={item.id} />
+          </ListGroup.Item>
+        ))}
+      </StyleListGroup>
 
-      <StyledRow>
-        <Col>
-          <StyleForm>
-            <Form.Control type='number' placeholder='Количество шуток' className='mb-2' />
-            <StyledButton variant='outline-primary' type='submit' onClick={(event) => event.preventDefault()}>
-              Загрузить
-            </StyledButton>
-          </StyleForm>
-        </Col>
-      </StyledRow>
+      <StyleForm>
+        <Form.Control type='number' placeholder='Количество шуток' className='mb-2' />
+        <StyledButton variant='outline-primary' type='submit' onClick={(event) => event.preventDefault()}>
+          Загрузить
+        </StyledButton>
+      </StyleForm>
     </Container>
   )
 }

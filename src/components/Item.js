@@ -1,11 +1,15 @@
-import React from 'react'
-import {Container} from 'react-bootstrap'
-import styled from 'styled-components'
+import React from 'react';
+import { Row } from 'react-bootstrap';
+import { Link, useLocation } from 'react-router-dom';
+import { JokePage } from '../styled/Item';
 
-export default function Item(props) {
-  return (
-    <Container fluid='md'>
-      <p>{props.joke}</p>
-    </Container>
-  )
+export const Item = () => {
+	const location = useLocation();
+	return (
+			<JokePage>
+				<Row>{location.state.item.joke}</Row>
+				<Row><Link to='/'>Back</Link></Row>
+			</JokePage>
+	)
 }
+

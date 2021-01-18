@@ -1,27 +1,24 @@
-import React, { useState } from 'react';
-import { Row, Modal, Button } from 'react-bootstrap';
-import { Link, useHistory, useParams, useLocation } from 'react-router-dom';
-import { JokePage } from '../styled/Item';
+import React from 'react';
+import { Modal, Button } from 'react-bootstrap';
+import { useLocation } from 'react-router-dom';
+import { JokeText, StyledNavLink } from '../styled/Item';
 
-export const Item = (props) => {
+export const Item = ({ id, joke = '', onChange, show = false, onHide }) => {
     let location = useLocation();
-    let history = useHistory();
-    let { id } = useParams();
-    // console.log('History', history);
-    // console.log('Params', id);
-    // console.log('Loc', location.state);
-    let back = (e) => {
-        e.stopPropagation();
-        history.goBack();
-    };
+
     return (
-        <Modal {...props}>
-            <Modal.Body>
-                <p>{location.state}</p>
-            </Modal.Body>
-            <Modal.Footer>
-                <Button onClick={back}>Close</Button>
-            </Modal.Footer>
-        </Modal>
+        <>
+            <StyledNavLink to={{ pathname: `/joke/${id}`, state: { background: location } }} onClick={() => onChange(id)}>
+                {joke.length > 99 ? joke.slice(0, 100) + '...' : joke}
+            </StyledNavLink>
+            <Modal show={show} centered size='lg'>
+                <Modal.Body>
+                    <JokeText>{joke}</JokeText>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button onClick={() => onHide()}>Close</Button>
+                </Modal.Footer>
+            </Modal>
+        </>
     );
 };

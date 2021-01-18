@@ -1,5 +1,4 @@
 import { Col, Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const StyledCol = styled(Col)`
@@ -17,11 +16,6 @@ export const StyledCard = styled(Card)`
     text-decoration: none;
 `;
 
-export const StyledNavLink = styled(Link)`
-    &:hover {
-        text-decoration: none;
-    }
-`;
 export const EmptyList = styled.div`
     display: flex;
     justify-content: center;

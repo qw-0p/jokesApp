@@ -5,13 +5,13 @@ import { Error } from './components/Error';
 import { Route, Switch, useLocation } from 'react-router-dom';
 
 const App = () => {
-    let location = useLocation();
-    let background = location.state && location.state.background;
+    const location = useLocation();
+    const background = location.state && location.state.background;
     return (
         <main>
-            <Switch>
+            <Switch location={background || location}>
                 <Route exact path='/' component={Home} />
-                <Route exact path='/joke/:id' component={Home} />
+                <Route exact path='/joke/:id' component={Item} />
                 <Route component={Error} />
             </Switch>
             {background && <Route path='/joke/:id' children={<Item />} />}

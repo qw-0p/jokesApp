@@ -1,13 +1,16 @@
-import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const JokePage = styled(Container)`
-    display: flex;
-    justify-content: center;
+export const JokeText = styled.p`
     text-align: center;
-    flex-direction: column;
-    font-size: 1.5rem;
-    align-items: center;
-    height: 100vh;
-    color: #969696;
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #404040;
+`;
+
+export const StyledNavLink = styled(Link)`
+    font-size: 1.2rem;
+    &:hover {
+        text-decoration: none;
+    }
 `;

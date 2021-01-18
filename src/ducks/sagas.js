@@ -39,11 +39,11 @@ export default function* rootSaga() {
 }
 
 const fetchJokes = async (num = 10) => {
-    const response = await fetch(`http://api.icndb.com/jokes/random/${num}`, { mode: 'cors' });
+    const response = await fetch(`http://api.icndb.com/jokes/random/${num}`);
     return await response.json();
 };
 
 const fetchCategories = async () => {
-    const response = await fetch('http://api.icndb.com/categories', { mode: 'cors' });
+    const response = await fetch('http://api.icndb.com/categories');
     return await response.json();
 };

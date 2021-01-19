@@ -9,8 +9,8 @@ export const JokesForm = () => {
     const dispatch = useDispatch();
     const loading = useSelector((state) => state.widgets.loading);
     const [number, setNumber] = useState('');
-    const submitHandler = (e) => {
-        e.preventDefault();
+    const submitHandler = (event) => {
+        event.preventDefault();
         if (number) {
             dispatch(loadJokes(number));
         }

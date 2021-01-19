@@ -7,7 +7,7 @@ import { filterList } from '../redux/ducks/jokes';
 export const Filter = () => {
     const dispatch = useDispatch();
     const state = useSelector((state) => state.jokes.categories);
-    const loading = useSelector((state) => state.jokes.loading);
+    const loading = useSelector((state) => state.app.loading);
     const submitHandler = (category) => {
         dispatch(filterList(category));
     };

@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom';
 import createSagaMiddleware from 'redux-saga';
 import { compose, createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+
 import App from './App';
 import rootReducer from './ducks/reducer';
 import rootSaga from './ducks/sagas';

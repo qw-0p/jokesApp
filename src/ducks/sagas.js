@@ -1,4 +1,5 @@
 import { call, put, spawn, takeEvery } from 'redux-saga/effects';
+
 import { fetchList, initialFilter, showLoader, hideLoader, LOAD_JOKES } from './widgets';
 
 function* workerListData() {

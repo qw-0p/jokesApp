@@ -1,6 +1,7 @@
 import React from 'react';
 import { DropdownButton, Dropdown, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { filterList } from '../ducks/widgets';
 
 export const Filter = () => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+
 import { ErrorPage } from '../styled/Error';
 
 export const Error = () => (

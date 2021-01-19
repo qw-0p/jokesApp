@@ -1,9 +1,7 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { JokesForm } from './JokesForm';
-import { Filter } from './Filter';
-import { List } from './List';
-import { Loader } from './Loader';
+
+import { JokesForm, Filter, List, Loader } from './index';
 import { Wrapper } from '../styled/Home';
 
 export const Home = () => (

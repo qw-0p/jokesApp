@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Container, Card, Row } from 'react-bootstrap';
 import { v4 } from 'uuid';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+
 import { StyledCol, StyledCard, EmptyList } from '../styled/List';
 import { Item } from './Item';
-
-import { useHistory } from 'react-router-dom';
 
 export const List = () => {
     const history = useHistory();

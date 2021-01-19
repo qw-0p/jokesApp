@@ -1,8 +1,7 @@
 import React from 'react';
-import { Item } from './components/Item';
-import { Home } from './components/Home';
-import { Error } from './components/Error';
 import { Route, Switch, useLocation } from 'react-router-dom';
+
+import { Item, Home, Error } from './components/index';
 
 const App = () => {
     const location = useLocation();

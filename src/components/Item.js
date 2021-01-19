@@ -1,6 +1,7 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
+
 import { JokeText, StyledNavLink } from '../styled/Item';
 
 export const Item = ({ id, joke = '', onChange, show = false, onHide }) => {

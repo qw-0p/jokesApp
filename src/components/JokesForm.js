@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { loadJokes } from '../ducks/widgets';
+import { loadJokes } from '../redux/ducks/jokes';
 import { StyledRow } from '../styled/JokeForm';
 
 export const JokesForm = () => {
     const dispatch = useDispatch();
-    const loading = useSelector((state) => state.widgets.loading);
+    const loading = useSelector((state) => state.app.loading);
     const [number, setNumber] = useState('');
     const submitHandler = (event) => {
         event.preventDefault();

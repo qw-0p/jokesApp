@@ -2,12 +2,12 @@ import React from 'react';
 import { DropdownButton, Dropdown, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { filterList } from '../ducks/widgets';
+import { filterList } from '../redux/ducks/jokes';
 
 export const Filter = () => {
     const dispatch = useDispatch();
-    const state = useSelector((state) => state.widgets.categories);
-    const loading = useSelector((state) => state.widgets.loading);
+    const state = useSelector((state) => state.jokes.categories);
+    const loading = useSelector((state) => state.jokes.loading);
     const submitHandler = (category) => {
         dispatch(filterList(category));
     };

@@ -16,8 +16,8 @@ export const List = () => {
         setModalShow(null);
         history.goBack();
     };
-    const state = useSelector((state) => state.widgets.jokes);
-    const filters = useSelector((state) => state.widgets.filter);
+    const state = useSelector((state) => state.jokes.jokes);
+    const filters = useSelector((state) => state.jokes.filter);
     const filterList = () => state.map((joke) => (!filters ? joke : joke.categories[0] === filters && joke)).filter((element) => element);
 
     return (

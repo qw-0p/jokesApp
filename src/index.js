@@ -8,8 +8,8 @@ import { compose, createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
 import App from './App';
-import rootReducer from './ducks/reducer';
-import rootSaga from './ducks/sagas';
+import rootReducer from './redux/store';
+import { rootSaga } from './redux/ducks/jokes';
 import reportWebVitals from './reportWebVitals';
 
 const sagaMiddleWare = createSagaMiddleware();

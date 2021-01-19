@@ -18,12 +18,13 @@ export const Filter = () => {
                 <Dropdown.Item as='button' onClick={() => submitHandler(null)}>
                     all
                 </Dropdown.Item>
-                {state.map((item) =>
-                    item ? (
-                        <Dropdown.Item as='button' key={item} onClick={() => submitHandler(item)}>
-                            {item}
-                        </Dropdown.Item>
-                    ) : null
+                {state.map(
+                    (item) =>
+                        item && (
+                            <Dropdown.Item as='button' key={item} onClick={() => submitHandler(item)}>
+                                {item}
+                            </Dropdown.Item>
+                        )
                 )}
             </DropdownButton>
         </Col>

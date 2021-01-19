@@ -18,7 +18,7 @@ export const List = () => {
     };
     const state = useSelector((state) => state.widgets.jokes);
     const filters = useSelector((state) => state.widgets.filter);
-    const filterList = () => state.map((joke) => (!filters ? joke : joke.categories[0] === filters && joke));
+    const filterList = () => state.map((joke) => (!filters ? joke : joke.categories[0] === filters && joke)).filter((element) => element);
 
     return (
         <Container fluid>

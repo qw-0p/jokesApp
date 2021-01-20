@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
-import { JokeText } from '../styled/Item';
+import { JokeText } from '../styled/ModalPage';
 
 export const ModalPage = ({ show, joke, onHide }) => {
     return (

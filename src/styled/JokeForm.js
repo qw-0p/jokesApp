@@ -1,6 +1,6 @@
-import { Row } from "react-bootstrap";
-import styled from "styled-components";
+import { Row } from 'react-bootstrap';
+import styled from 'styled-components';
 
 export const StyledRow = styled(Row)`
-	margin: 15px 0;
-`
+    margin: 15px 0;
+`;

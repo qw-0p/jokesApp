@@ -1,15 +1,15 @@
 import React from 'react';
-import { Row } from 'react-bootstrap';
-import { Link, useLocation } from 'react-router-dom';
-import { JokePage } from '../styled/Item';
+import { useLocation } from 'react-router-dom';
 
-export const Item = () => {
-	const location = useLocation();
-	return (
-			<JokePage>
-				<Row>{location.state.item.joke}</Row>
-				<Row><Link to='/'>Back</Link></Row>
-			</JokePage>
-	)
-}
+import { StyledNavLink } from '../styled/Item';
 
+export const Item = ({ id, joke = '' }) => {
+    let location = useLocation();
+    return (
+        <>
+            <StyledNavLink to={{ pathname: `/joke/${id}`, state: { background: location, id: id, joke: joke, modal: true } }}>
+                {joke.length > 99 ? joke.slice(0, 100) + '...' : joke}
+            </StyledNavLink>
+        </>
+    );
+};

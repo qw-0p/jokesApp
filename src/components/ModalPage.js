@@ -6,7 +6,7 @@ import { JokeText } from '../styled/ModalPage';
 export const ModalPage = ({ show, joke, onHide }) => (
     <Modal show={show} centered size='lg'>
         <Modal.Body>
-            <JokeText>{joke}</JokeText>
+            <JokeText dangerouslySetInnerHTML={{ __html: joke }} />
         </Modal.Body>
         <Modal.Footer>
             <Button onClick={() => onHide()}>Close</Button>

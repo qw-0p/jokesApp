@@ -17,7 +17,11 @@ export const List = () => {
     };
     const state = useSelector((state) => state.jokes.jokes);
     const filters = useSelector((state) => state.jokes.filter);
-    const filterList = () => state.map((joke) => (!filters ? joke : joke.categories[0] === filters && joke)).filter((element) => element);
+    const filterList = () => {
+        return state
+            .map((joke) => (!filters ? joke : joke.categories[0] === filters && joke))
+            .filter((element) => element);
+    };
 
     useEffect(() => {
         if (!!stateHistory) {

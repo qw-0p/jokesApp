@@ -5,3 +5,4 @@ export { Item } from './Item';
 export { JokesForm } from './JokesForm';
 export { List } from './List';
 export { Loader } from './Loader';
+export { ModalPage } from './ModalPage';

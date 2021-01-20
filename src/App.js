@@ -10,7 +10,7 @@ const App = () => {
         <main>
             <Switch location={background || location}>
                 <Route exact path='/' component={Home} />
-                <Route exact path='/joke/:id' component={Item} />
+                <Route exact path='/:joke/id' component={Item} />
                 <Route component={Error} />
             </Switch>
             {background && <Route path='/joke/:id' children={<Item />} />}

@@ -1,11 +1,12 @@
-const SHOW_LOADER = 'ducks/app/SHOW_LOADER';
-const HIDE_LOADER = 'ducks/app/HIDE_LOADER';
+import { IAppState, AppActionTypes } from './appTypes';
+export const SHOW_LOADER = 'ducks/app/SHOW_LOADER';
+export const HIDE_LOADER = 'ducks/app/HIDE_LOADER';
 
-const initialState = {
+const initialState: IAppState = {
     loading: false
 };
 
-const reducer = (state = initialState, action = {}) => {
+const reducer = (state = initialState, action: AppActionTypes): IAppState => {
     switch (action.type) {
         case SHOW_LOADER:
             return { ...state, loading: true };
@@ -16,12 +17,12 @@ const reducer = (state = initialState, action = {}) => {
     }
 };
 
-export const showLoader = () => {
+export const showLoader = (): AppActionTypes => {
     return {
         type: SHOW_LOADER
     };
 };
-export const hideLoader = () => {
+export const hideLoader = (): AppActionTypes => {
     return {
         type: HIDE_LOADER
     };

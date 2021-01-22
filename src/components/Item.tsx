@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { StyledNavLink } from '../styled/Item';
 
-export const Item = ({ id, joke = '' }) => {
+export const Item = ({ id = '', joke = '' } : {id: string, joke: string}) => {
     let location = useLocation();
     return (
         <>

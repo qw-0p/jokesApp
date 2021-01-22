@@ -3,8 +3,12 @@ import { Route, Switch, useLocation } from 'react-router-dom';
 
 import { Item, Home, Error } from './components';
 
-const App = () => {
-    const location = useLocation();
+interface LocationState {
+    background: any
+}
+
+const App: React.FC = () => {
+    const location = useLocation<LocationState>();
     const background = location.state && location.state.background;
     return (
         <main>
@@ -13,7 +17,6 @@ const App = () => {
                 <Route exact path='/:joke/id' component={Item} />
                 <Route component={Error} />
             </Switch>
-            {background && <Route path='/joke/:id' children={<Item />} />}
         </main>
     );
 };

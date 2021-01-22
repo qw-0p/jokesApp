@@ -1,19 +1,21 @@
+
+import { IJokesState, JokesActionTypes, Jokes, Filters, Filter  } from './jokesTypes';
 import { call, put, spawn, takeEvery } from 'redux-saga/effects';
 import { showLoader, hideLoader } from './app';
 
-const FETCH_LIST = 'redux/jokes/FETCH_LIST';
-const FILTER = 'redux/jokes/FILTER';
-const INITIAL_FILTER = 'redux/jokes/INITIAL_FILTER';
-const LOAD_JOKES = 'redux/jokes/LOAD_JOKES';
+export const FETCH_LIST = 'redux/jokes/FETCH_LIST';
+export const FILTER = 'redux/jokes/FILTER';
+export const INITIAL_FILTER = 'redux/jokes/INITIAL_FILTER';
+export const LOAD_JOKES = 'redux/jokes/LOAD_JOKES';
 
-const initialState = {
+const initialState: IJokesState = {
     categories: [],
     filter: '',
     amount: '',
     jokes: []
 };
 
-const reducer = (state = initialState, action = {}) => {
+const reducer = (state = initialState, action: JokesActionTypes): IJokesState => {
     switch (action.type) {
         case FETCH_LIST:
             return {
@@ -23,7 +25,7 @@ const reducer = (state = initialState, action = {}) => {
         case INITIAL_FILTER:
             return {
                 ...state,
-                categories: action.payload
+                categories: [...state.categories, ...action.payload]
             };
         case FILTER:
             return {
@@ -40,28 +42,30 @@ const reducer = (state = initialState, action = {}) => {
     }
 };
 
-export const fetchList = (jokesArray) => {
+
+
+export const fetchList = (jokesArray: any[]): JokesActionTypes => {
     return {
         type: FETCH_LIST,
         payload: jokesArray
     };
 };
 
-export const initialFilter = (filterArray) => {
+export const initialFilter = (filterArray: Filters): JokesActionTypes => {
     return {
         type: INITIAL_FILTER,
         payload: filterArray
     };
 };
 
-export const filterList = (category) => {
+export const filterList = (category: Filter): JokesActionTypes => {
     return {
         type: FILTER,
         payload: category
     };
 };
 
-export const loadJokes = (amount) => {
+export const loadJokes = (amount: string): JokesActionTypes => {
     return {
         type: LOAD_JOKES,
         payload: amount
@@ -81,11 +85,11 @@ function* workerListData() {
     }
 }
 
-function* watchFatchListData() {
+function* watchFetchListData() {
     yield call(workerListData);
 }
 
-function* workerLoadingJokes({ payload: num }) {
+function* workerLoadingJokes({ payload: num } : {payload: number, type: JokesActionTypes}) {
     try {
         yield put(showLoader());
         const data = yield call(fetchJokes, num);
@@ -100,17 +104,17 @@ function* watchLoadingJokes() {
     yield takeEvery(LOAD_JOKES, workerLoadingJokes);
 }
 
-export function* rootSaga() {
-    yield spawn(watchFatchListData);
+export function* rootSaga(){
+    yield spawn(watchFetchListData);
     yield spawn(watchLoadingJokes);
 }
 
-const fetchJokes = async (num = 10) => {
+const fetchJokes = async (num = 10): Promise<any> => {
     const response = await fetch(`http://api.icndb.com/jokes/random/${num}`);
     return await response.json();
 };
 
-const fetchCategories = async () => {
+const fetchCategories = async (): Promise<any> => {
     const response = await fetch('http://api.icndb.com/categories');
     return await response.json();
 };

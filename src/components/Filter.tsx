@@ -1,15 +1,16 @@
 import React from 'react';
 import { DropdownButton, Dropdown, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { filterList } from '../redux/ducks/jokes';
+import { RootState } from '../redux/store';
 
-export const Filter = () => {
+
+export const Filter: React.FC = () => {
     const dispatch = useDispatch();
-    const state = useSelector((state) => state.jokes.categories);
-    const loading = useSelector((state) => state.app.loading);
-    const submitHandler = (category) => {
-        dispatch(filterList(category));
+    const state = useSelector((state: RootState) => state.jokes.categories);
+    const loading = useSelector((state: RootState) => state.app.loading);
+    const submitHandler = (event: any) => {
+        dispatch(filterList(event));
     };
 
     return (
@@ -19,7 +20,7 @@ export const Filter = () => {
                     all
                 </Dropdown.Item>
                 {state.map(
-                    (item) =>
+                    (item: any) =>
                         item && (
                             <Dropdown.Item as='button' key={item} onClick={() => submitHandler(item)}>
                                 {item}

@@ -6,21 +6,23 @@ import { useHistory } from 'react-router-dom';
 
 import { StyledCol, StyledCard, EmptyList } from '../styled/List';
 import { Item, ModalPage } from '.';
+import { RootState } from '../redux/store';
+import { Jokes } from '../redux/ducks/jokesTypes';
 
 export const List = () => {
     const history = useHistory();
-    const stateHistory = history.location.state;
-    const [modalState, setModalState] = useState(null);
+    const stateHistory: any = history.location.state;
+    const [modalState, setModalState]: any = useState(null);
     const handleHide = () => {
         setModalState((modalState.modal = false));
         history.goBack();
     };
-    const state = useSelector((state) => state.jokes.jokes);
-    const filters = useSelector((state) => state.jokes.filter);
+    const state = useSelector((state: RootState) => state.jokes.jokes);
+    const filters = useSelector((state: RootState) => state.jokes.filter);
     const filterList = () => {
         return state
-            .map((joke) => (!filters ? joke : joke.categories[0] === filters && joke))
-            .filter((element) => element);
+            .map((joke: any) => (!filters ? joke : joke.categories[0] === filters && joke))
+            .filter((element: any) => element);
     };
 
     useEffect(() => {

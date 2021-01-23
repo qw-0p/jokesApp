@@ -7,22 +7,22 @@ import { RootState } from '../redux/store';
 
 export const Filter: React.FC = () => {
     const dispatch = useDispatch();
-    const state = useSelector((state: RootState) => state.jokes.categories);
-    const loading = useSelector((state: RootState) => state.app.loading);
-    const submitHandler = (event: any) => {
+    const state = useSelector((state: RootState): string[] => state.jokes.categories);
+    const loading = useSelector((state: RootState): boolean => state.app.loading);
+    const submitHandler = (event: any): void => {
         dispatch(filterList(event));
     };
 
     return (
         <Col>
             <DropdownButton id='dropdown-item-button' title='Filter' disabled={loading}>
-                <Dropdown.Item as='button' onClick={() => submitHandler(null)}>
+                <Dropdown.Item as='button' onClick={(): void => submitHandler(null)}>
                     all
                 </Dropdown.Item>
                 {state.map(
-                    (item: any) =>
+                    (item: any): JSX.Element =>
                         item && (
-                            <Dropdown.Item as='button' key={item} onClick={() => submitHandler(item)}>
+                            <Dropdown.Item as='button' key={item} onClick={(): void => submitHandler(item)}>
                                 {item}
                             </Dropdown.Item>
                         )

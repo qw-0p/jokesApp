@@ -80,11 +80,11 @@ function* workerListData() {
     } catch (e) {
         yield put(hideLoader());
     }
-}
+};
 
 function* watchFetchListData() {
     yield call(workerListData);
-}
+};
 
 function* workerLoadingJokes({ payload: num } : {payload: number, type: JokesActionTypes}) {
     try {
@@ -95,16 +95,16 @@ function* workerLoadingJokes({ payload: num } : {payload: number, type: JokesAct
     } catch (e) {
         yield put(hideLoader());
     }
-}
+};
 
 function* watchLoadingJokes() {
     yield takeEvery(LOAD_JOKES, workerLoadingJokes);
-}
+};
 
 export function* rootSaga(){
     yield spawn(watchFetchListData);
     yield spawn(watchLoadingJokes);
-}
+};
 
 const fetchJokes = async (num = 10): Promise<any> => {
     const response = await fetch(`http://api.icndb.com/jokes/random/${num}`);

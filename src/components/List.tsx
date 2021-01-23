@@ -11,18 +11,18 @@ import { Jokes } from '../redux/ducks/jokesTypes';
 
 export const List: React.FC = () => {
     const history = useHistory();
-    const stateHistory: any = history.location.state;
+    const stateHistory = history.location.state;
     const [modalState, setModalState]: any = useState(null);
-    const handleHide = () => {
+    const handleHide = (): void => {
         setModalState((modalState.modal = false));
         history.goBack();
     };
-    const state = useSelector((state: RootState) => state.jokes.jokes);
-    const filters = useSelector((state: RootState) => state.jokes.filter);
+    const state = useSelector((state: RootState): Jokes[] => state.jokes.jokes);
+    const filters = useSelector((state: RootState): string => state.jokes.filter);
     const filterList = (): Jokes[] => {
         return state
             .map((joke: any) => (!filters ? joke : joke.categories[0] === filters && joke))
-            .filter((element: any) => element);
+            .filter((joke: any) => joke);
     };
 
     useEffect(() => {
@@ -35,7 +35,7 @@ export const List: React.FC = () => {
         <Container fluid>
             <Row lg='3' xl='4' md='2' xs='1'>
                 {filterList().length ? (
-                    filterList().map((item: Jokes) => {
+                    filterList().map((item: Jokes): JSX.Element => {
                         return (
                             <StyledCol key={v4()}>
                                 <StyledCard key={v4()}>

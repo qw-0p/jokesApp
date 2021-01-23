@@ -22,6 +22,7 @@ export const showLoader = (): AppActionTypes => {
         type: SHOW_LOADER
     };
 };
+
 export const hideLoader = (): AppActionTypes => {
     return {
         type: HIDE_LOADER

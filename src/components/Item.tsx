@@ -13,7 +13,7 @@ export const Item: React.FC<ItemProps> = ({ id = '', joke = '' }) => {
                 to={{ pathname: `/joke/${id}`, state: { background: location, id: id, joke: joke, modal: true } }}
                 dangerouslySetInnerHTML={{
                     __html: joke.length > 99 ? joke.slice(0, 100) + '...' : joke
-                }}></StyledNavLink>
+                }} />
         </>
     );
 };

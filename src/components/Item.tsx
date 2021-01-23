@@ -3,7 +3,9 @@ import { useLocation } from 'react-router-dom';
 
 import { StyledNavLink } from '../styled/Item';
 
-export const Item = ({ id = '', joke = '' } : {id: string, joke: string}) => {
+type ItemProps = {id: string, joke: string}
+
+export const Item: React.FC<ItemProps> = ({ id = '', joke = '' }) => {
     let location = useLocation();
     return (
         <>

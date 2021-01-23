@@ -1,5 +1,5 @@
 
-import { IJokesState, JokesActionTypes, Jokes, Filters, Filter  } from './jokesTypes';
+import { IJokesState, JokesActionTypes, Filters, Filter  } from './jokesTypes';
 import { call, put, spawn, takeEvery } from 'redux-saga/effects';
 import { showLoader, hideLoader } from './app';
 

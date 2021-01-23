@@ -3,7 +3,7 @@ import { FETCH_LIST, INITIAL_FILTER, FILTER, LOAD_JOKES } from './jokes';
 
 
 export type Jokes = {
-    id: number,
+    id: string,
     joke: string
     categories: string[] 
 }

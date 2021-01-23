@@ -9,7 +9,7 @@ import { Item, ModalPage } from '.';
 import { RootState } from '../redux/store';
 import { Jokes } from '../redux/ducks/jokesTypes';
 
-export const List = () => {
+export const List: React.FC = () => {
     const history = useHistory();
     const stateHistory: any = history.location.state;
     const [modalState, setModalState]: any = useState(null);
@@ -19,7 +19,7 @@ export const List = () => {
     };
     const state = useSelector((state: RootState) => state.jokes.jokes);
     const filters = useSelector((state: RootState) => state.jokes.filter);
-    const filterList = () => {
+    const filterList = (): Jokes[] => {
         return state
             .map((joke: any) => (!filters ? joke : joke.categories[0] === filters && joke))
             .filter((element: any) => element);
@@ -35,7 +35,7 @@ export const List = () => {
         <Container fluid>
             <Row lg='3' xl='4' md='2' xs='1'>
                 {filterList().length ? (
-                    filterList().map((item) => {
+                    filterList().map((item: Jokes) => {
                         return (
                             <StyledCol key={v4()}>
                                 <StyledCard key={v4()}>

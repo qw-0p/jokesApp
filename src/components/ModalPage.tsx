@@ -3,7 +3,9 @@ import { Modal, Button } from 'react-bootstrap';
 
 import { JokeText } from '../styled/ModalPage';
 
-export const ModalPage = ({ show, joke, onHide } : {show: boolean, joke: string, onHide: () => void}) => (
+type ModalProps = {show: boolean, joke: string, onHide: () => void}
+
+export const ModalPage: React.FC<ModalProps> = ({ show, joke, onHide }) => (
     <Modal show={show} centered size='lg'>
         <Modal.Body>
             <JokeText dangerouslySetInnerHTML={{ __html: joke }} />

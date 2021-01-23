@@ -6,7 +6,7 @@ import { loadJokes } from '../redux/ducks/jokes';
 import { RootState } from '../redux/store';
 import { StyledRow } from '../styled/JokeForm';
 
-export const JokesForm = () => {
+export const JokesForm: React.FC = () => {
     const dispatch = useDispatch();
     const loading = useSelector((state: RootState) => state.app.loading);
     const [number, setNumber] = useState('');

@@ -1,4 +1,3 @@
-
 import { IJokesState, JokesActionTypes, Filters, Filter  } from './jokesTypes';
 import { call, put, spawn, takeEvery } from 'redux-saga/effects';
 import { showLoader, hideLoader } from './app';
@@ -41,8 +40,6 @@ const reducer = (state = initialState, action: JokesActionTypes): IJokesState =>
             return state;
     }
 };
-
-
 
 export const fetchList = (jokesArray: any[]): JokesActionTypes => {
     return {

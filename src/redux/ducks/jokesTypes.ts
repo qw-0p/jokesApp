@@ -1,7 +1,5 @@
 import { FETCH_LIST, INITIAL_FILTER, FILTER, LOAD_JOKES } from './jokes';
 
-
-
 export type Jokes = {
     id: string,
     joke: string
@@ -13,7 +11,6 @@ export interface IJokesState {
     filter: string,
     amount: string,
     jokes: Jokes[],
-    
 }
 
 interface IFetchList {
@@ -34,8 +31,6 @@ interface IFilter {
 	type: typeof FILTER
 	payload: Filter
 }
-
-
 
 interface ILoadJokes {
 	type: typeof LOAD_JOKES

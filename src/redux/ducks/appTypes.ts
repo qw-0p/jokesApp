@@ -1,7 +1,4 @@
-
 import { SHOW_LOADER, HIDE_LOADER } from './app';
-
-
 
 type Loading = boolean
 

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error component snapshot Error component 1`] = `
+<Styled(Container)
+  fluid={true}
+>
+  <Row
+    noGutters={false}
+  >
+    <Col>
+      <Filter />
+    </Col>
+  </Row>
+  <Row
+    noGutters={false}
+  >
+    <Col>
+      <List />
+      <Loader />
+    </Col>
+  </Row>
+  <Row
+    className="justify-content-center"
+    noGutters={false}
+  >
+    <JokesForm />
+  </Row>
+</Styled(Container)>
+`;

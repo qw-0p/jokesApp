@@ -14,26 +14,26 @@ export interface IJokesState {
 };
 
 interface IFetchList {
-	type: typeof FETCH_LIST
+	readonly type: typeof FETCH_LIST
 	payload: any[]
 };
 
 export type Filters = string
 
 interface IInitialFilter {
-	type: typeof INITIAL_FILTER
+	readonly type: typeof INITIAL_FILTER
 	payload: Filters
 };
 
 export type Filter = string
 
 interface IFilter {
-	type: typeof FILTER
+	readonly type: typeof FILTER
 	payload: Filter
 };
 
 interface ILoadJokes {
-	type: typeof LOAD_JOKES
+	readonly type: typeof LOAD_JOKES
 	payload: string
 };
 

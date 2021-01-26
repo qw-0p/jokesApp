@@ -7,11 +7,11 @@ export interface IAppState {
 };
 
 interface IShowLoader {
-	type: typeof SHOW_LOADER
+	readonly type: typeof SHOW_LOADER
 };
 
 interface IHideLoader {
-	type: typeof HIDE_LOADER
+	readonly type: typeof HIDE_LOADER
 };
 
 export type AppActionTypes = IShowLoader | IHideLoader;

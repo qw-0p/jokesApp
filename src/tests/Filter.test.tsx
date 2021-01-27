@@ -1,18 +1,21 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { Loader } from './Loader'
+import { Filter } from '../components/Filter'
 
 import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
 import { shallowToJson } from 'enzyme-to-json';
-import { IAppState } from '../redux/ducks/appTypes';
+import { IJokesState } from '../redux/ducks/jokesTypes';
 
 
 
 describe('Filter component', () => {
-	const initialState: IAppState = {
-		loading: false
+	const initialState: IJokesState = {
+		categories: [],
+		filter: '',
+		amount: '',
+		jokes: []
 	  }
 	  const mockStore = configureStore()
 	
@@ -20,7 +23,7 @@ describe('Filter component', () => {
 	let store: any
 	store = mockStore(initialState)
 	beforeEach(() => {
-		component = shallow(<Provider store={store}><Loader /></Provider>)
+		component = shallow(<Provider store={store}><Filter /></Provider>)
 	})
   it('snapshot', () => {
     expect(shallowToJson(component)).toMatchSnapshot()

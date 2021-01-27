@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
-import { ModalPage, ModalProps } from './ModalPage';
+import { ModalPage, ModalProps } from '../components/ModalPage';
 
 const props: ModalProps = {
     show: false,
@@ -9,7 +9,7 @@ const props: ModalProps = {
 }
 
 describe('ModalPage component', () => {
-    it('snapshot ModalPage component', () => {
+    it('snapshot', () => {
         const component = shallow( <ModalPage {...props} /> );
         expect(shallowToJson(component)).toMatchSnapshot();
     });

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Filter component snapshot 1`] = `
+exports[`Item component snapshot 1`] = `
 <ContextProvider
   value={
     Object {
@@ -32,6 +32,9 @@ exports[`Filter component snapshot 1`] = `
     }
   }
 >
-  <JokesForm />
+  <Item
+    id=""
+    joke=""
+  />
 </ContextProvider>
 `;

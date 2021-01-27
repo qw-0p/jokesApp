@@ -5,11 +5,11 @@ import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
 import { shallowToJson } from 'enzyme-to-json';
 import { IJokesState } from '../redux/ducks/jokesTypes';
-import { JokesForm } from './JokesForm';
+import { JokesForm } from '../components/JokesForm';
 
 
 
-describe('Filter component', () => {
+describe('JokesForm component', () => {
 	const initialState: IJokesState = {
 		categories: [],
 		filter: '',

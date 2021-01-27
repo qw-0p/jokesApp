@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Error component snapshot Error component 1`] = `
+exports[`Error component snapshot 1`] = `
 <Styled(Container)>
   <Row
     noGutters={false}

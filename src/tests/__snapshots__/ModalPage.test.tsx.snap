@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ModalPage component snapshot ModalPage component 1`] = `
+exports[`ModalPage component snapshot 1`] = `
 <Modal
   animation={true}
   autoFocus={true}

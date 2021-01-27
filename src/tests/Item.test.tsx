@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { Item, ItemProps } from './Item'
+import { Item, ItemProps } from '../components/Item'
 
 import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
@@ -10,7 +10,7 @@ import { IJokesState } from '../redux/ducks/jokesTypes';
 
 
 
-describe('Filter component', () => {
+describe('Item component', () => {
 	const initialState: IJokesState = {
 		categories: [],
 		filter: '',

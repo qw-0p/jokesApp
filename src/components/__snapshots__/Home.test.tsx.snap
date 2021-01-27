@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Error component snapshot Error component 1`] = `
+exports[`Home component snapshot Home component 1`] = `
 <Styled(Container)
   fluid={true}
 >

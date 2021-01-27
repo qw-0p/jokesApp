@@ -12,7 +12,7 @@ export const Filter: React.FC = () => {
     const submitHandler = (event: any): void => {
         dispatch(filterList(event));
     };
-
+    
     return (
         <Col>
             <DropdownButton id='dropdown-item-button' title='Filter' disabled={loading}>

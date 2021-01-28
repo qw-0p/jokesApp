@@ -2,20 +2,6 @@ import { IAppState } from './appTypes';
 import reducer, { hideLoader, showLoader, SHOW_LOADER, HIDE_LOADER} from './app'
 
 describe('app', () => {
-	describe('actions', () => {
-		it('should create an action showLoader', () => {
-			const expectedAction = {
-			  type: SHOW_LOADER,
-			}
-			expect(showLoader()).toEqual(expectedAction)
-		  })
-		it('should create an action hideLoader', () => {
-			const expectedAction = {
-			  type: HIDE_LOADER,
-			}
-			expect(hideLoader()).toEqual(expectedAction)
-		  })
-	});
 	describe('reducer', () => {
 		let initialState: IAppState = {
 			loading: false
@@ -31,11 +17,24 @@ describe('app', () => {
 			).toEqual({loading: false})
 		})
 
-		it('should return state', () => {
+		it('should return initial state', () => {
 			const testAction = (): any => {
 				return {type: 'TEST'}
 			}
 			expect(reducer(undefined, testAction())).toEqual(initialState)
 		})
 	})
+	describe('actions', () => {
+		let expectedAction: any;
+		beforeEach(() => {
+			expectedAction = (type: any) => ({type})
+		})
+		it('should create an action showLoader', () => {
+			expect(showLoader()).toEqual(expectedAction(SHOW_LOADER))
+		  })
+		it('should create an action hideLoader', () => {
+			expect(hideLoader()).toEqual(expectedAction(HIDE_LOADER))
+		  })
+	});
+
 })

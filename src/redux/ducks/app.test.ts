@@ -1,5 +1,5 @@
-import { IAppState, AppActionTypes } from './appTypes';
-import {reducer, hideLoader, showLoader, SHOW_LOADER, HIDE_LOADER} from './app'
+import { IAppState } from './appTypes';
+import reducer, { hideLoader, showLoader, SHOW_LOADER, HIDE_LOADER} from './app'
 
 describe('app', () => {
 	describe('actions', () => {
@@ -35,7 +35,7 @@ describe('app', () => {
 			const testAction = (): any => {
 				return {type: 'TEST'}
 			}
-			expect(reducer(undefined, testAction())).toEqual(undefined)
+			expect(reducer(undefined, testAction())).toEqual(initialState)
 		})
 	})
 })

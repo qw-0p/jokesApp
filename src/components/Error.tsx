@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { ErrorPage } from '../styled/Error';
 
-export const Error = () => (
+export const Error: React.FC = () => (
     <ErrorPage>
         <Row>Page not found</Row>
         <Row>

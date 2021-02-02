@@ -8,7 +8,7 @@ To install all dependencies
 
 ### `yarn start`
 
-To strart project
+To start project
 
 ### `yarn test`
 

@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalPage component snapshot 1`] = `
+<Modal
+  animation={true}
+  autoFocus={true}
+  backdrop={true}
+  centered={true}
+  dialogAs={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "render": [Function],
+    }
+  }
+  enforceFocus={true}
+  keyboard={true}
+  restoreFocus={true}
+  show={false}
+  size="lg"
+>
+  <ModalBody>
+    <styled.p
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "",
+        }
+      }
+    />
+  </ModalBody>
+  <ModalFooter>
+    <Button
+      active={false}
+      disabled={false}
+      onClick={[Function]}
+      variant="primary"
+    >
+      Close
+    </Button>
+  </ModalFooter>
+</Modal>
+`;

@@ -6,18 +6,24 @@ import { useHistory } from 'react-router-dom';
 
 import { StyledCol, StyledCard, EmptyList } from '../styled/List';
 import { Item, ModalPage } from '.';
+import { RootState } from '../redux/store';
+import { Jokes } from '../redux/ducks/jokesTypes';
 
-export const List = () => {
+export const List: React.FC = () => {
     const history = useHistory();
     const stateHistory = history.location.state;
-    const [modalState, setModalState] = useState(null);
-    const handleHide = () => {
+    const [modalState, setModalState]: any = useState(null);
+    const handleHide = (): void => {
         setModalState((modalState.modal = false));
         history.goBack();
     };
-    const state = useSelector((state) => state.jokes.jokes);
-    const filters = useSelector((state) => state.jokes.filter);
-    const filterList = () => state.map((joke) => (!filters ? joke : joke.categories[0] === filters && joke)).filter((element) => element);
+    const state = useSelector((state: RootState): Jokes[] => state.jokes.jokes);
+    const filters = useSelector((state: RootState): string => state.jokes.filter);
+    const filterList = (): Jokes[] => {
+        return state
+            .map((joke: any) => (!filters ? joke : joke.categories[0] === filters && joke))
+            .filter((joke: any) => joke);
+    };
 
     useEffect(() => {
         if (!!stateHistory) {
@@ -29,7 +35,7 @@ export const List = () => {
         <Container fluid>
             <Row lg='3' xl='4' md='2' xs='1'>
                 {filterList().length ? (
-                    filterList().map((item) => {
+                    filterList().map((item: Jokes): JSX.Element => {
                         return (
                             <StyledCol key={v4()}>
                                 <StyledCard key={v4()}>

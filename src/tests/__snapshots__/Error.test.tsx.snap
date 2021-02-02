@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error component snapshot 1`] = `
+<Styled(Container)>
+  <Row
+    noGutters={false}
+  >
+    Page not found
+  </Row>
+  <Row
+    noGutters={false}
+  >
+    <Link
+      to="/"
+    >
+      Home
+    </Link>
+  </Row>
+</Styled(Container)>
+`;
